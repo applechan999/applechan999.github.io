@@ -359,6 +359,15 @@
   z-index: 4;
 }
 
+.qr-scan-complete-logo{
+	 text-align: center;
+    top: 8%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    position: absolute;
+    z-index: 0;
+}
+
 .qr-scan-complete-img {
   margin: center;
   max-width: 200%;
@@ -1423,11 +1432,14 @@ line-height: 2.6px; display: block; margin: 0px; margin-before: 0.5em; margin-af
 		</div>
 		<video playsinline hidden="" style="outline:none; " id="qr-video"></video>						
 		</div>
-
+		
+	<div hidden="" class="qr-scan-complete-logo" id="qr-scan-complete-logo">
+		<img unselectable="on" onselectstart="return false;" oncontextmenu="return false;" onmousedown="return false;" src="./icon/ic_launcher.png" style="
+    width: 200%;">
+	</div>
 	<div hidden="" class="qr-scan-complete-img" id="qr-complete-img" >
 		<img unselectable="on" onselectstart="return false;" oncontextmenu="return false;" onmousedown="return false;" src="./img/scan_complete_logo.png">
 	</div>
-  
   <div class="fake-text3" unselectable="on" onselectstart="return false;" onmousedown="return false;">
 	<p style="font-size:45px" class="d"><span id="fakeTitle"></p>
   </div>
@@ -1461,6 +1473,7 @@ line-height: 2.6px; display: block; margin: 0px; margin-before: 0.5em; margin-af
 	var x = document.getElementById("qr-video");
 	var y = document.getElementById("qr-img");
 	var cld = document.getElementById("cam-loadingid");
+	var hl = document.getElementById("qr-scan-complete-logo");
 	var xy = document.getElementById("qr-complete-img");
 	var ee = document.getElementById("exitButtonDesc");
 	var eeq = document.getElementById("exitButtonDescQr");
@@ -1577,6 +1590,7 @@ let scanner = new Instascan.Scanner({ video: document.getElementById('qr-video')
 	ee.style.display = "block";		
 	z.style.display = "block";
 	za.style.display = "block";
+	hl.style.display = "block";
 	xy.style.display = "block";
 	fb.style.display = "block";
 	cpi.style.display = "block";
@@ -1727,6 +1741,7 @@ let scanner = new Instascan.Scanner({ video: document.getElementById('qr-video')
 		et.style.display = "none";	
 		z.style.display = "none";
 		za.style.display = "none";
+		hl.style.display = "none";
 		xy.style.display = "none";
 		fb.style.display = "none";
 		cpi.style.display = "none";
@@ -1743,6 +1758,7 @@ let scanner = new Instascan.Scanner({ video: document.getElementById('qr-video')
 		et.style.display = "none";	
 		z.style.display = "none";
 		za.style.display = "none";
+		hl.style.display = "none";
 		xy.style.display = "none";
 		fb.style.display = "none";
 		cpi.style.display = "none";
